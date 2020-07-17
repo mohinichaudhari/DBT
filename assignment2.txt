@@ -1,0 +1,31 @@
+Mohini Chaudhari
+200240320058
+
+Assignment:-2
+---------------------------------------------------------------------------------------
+
+1) Which field of the Customers table is the primary key?
+
+Ans:- Cnum is primary key in the Customers table.
+
+
+
+2)What is the 4th column of the Customers table?
+
+Ans:- Customer rating is the 4th Column of Customer Table.
+
+
+
+3) What is another word for row? For column?
+
+Ans:- Another word for row is tuple and entity and for column is attribute or method. 
+
+
+
+
+4) Why isn’t it possible to see the first five rows of a table?
+
+Ans-> Rows of table are scatterred(fragmentnd) all over the DB server HD.
+
+
+
