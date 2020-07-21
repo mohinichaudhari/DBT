@@ -22,13 +22,13 @@ ANS:- select lower(sname) from supplier;
 
 ANS:- select lpad(sname,25,' ') from supplier;
 
-5. Display all the Supplier names (with ‘la’ replaced by ‘ro’).
+5. Display all the Supplier names (with â€˜laâ€™ replaced by â€˜roâ€™).
 HINT: REPLACE.
 
 ANS:- select replace(sname,'lo','ro') from supplier;
 
-6. Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ is replaced
-with ‘o’.
+6. Implement the above command such that â€˜lâ€™ is replaced with â€˜râ€™ and â€˜aâ€™ is replaced
+with â€˜oâ€™.
 
 ANS:- select replace((replace(sname,'l','r')),'a','o') from supplier;
 
@@ -36,9 +36,20 @@ ANS:- select replace((replace(sname,'l','r')),'a','o') from supplier;
 
 ANS:-select length(sname) from supplier;
 
-8. Use the soundex function to search for a supplier by the name of ‘BLOKE’.
+8. Use the soundex function to search for a supplier by the name of â€˜BLOKEâ€™.
 
-ANS:- select * from supplier where soundex(sname)=soundex('BLOKE');
+ANS:- 
+select * from supplier where soundex(sname)=soundex('BLOKE');
 
 9. Display the Supplier name and the status (as Ten, Twenty, Thirty, etc.).
+
+ANS:- select sname, case when status=10 then 'Ten' when status=20 then 'Twenty' when status=30
+then 'Three'
+when status=40 then 'Fourty' when status=50 then 'Fifty' when status=60 then 'Sixty'
+when status=70 then 'Seventy' 
+when status=80 then 'Eight' 
+else 'Other' end as status from supplier;
+
 10. Display the current day (e.g. Thursday).
+
+ANS:- select dayname(sysdate()) from dual;
