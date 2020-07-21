@@ -7,7 +7,7 @@ assignment:-8
 
 
 1) Assume each salesperson has a 12% commission. Write a query on the orders table that will produce
-the order number, the salesperson number, and the amount of the salesperson’s commission for that order.
+the order number, the salesperson number, and the amount of the salespersonâ€™s commission for that order.
 
 ANS:- select onum,snum,amt*0.12 as "Comm" from orders;
 
@@ -15,12 +15,13 @@ ANS:- select onum,snum,amt*0.12 as "Comm" from orders;
 2) Write a query on the Customers table that will find the highest rating in each city. 
 Put the output in this form: For the city (city), the highest rating is : (rating).
 
-ANS:- select city,max(rating) as "rating" from customers group by city;
+ANS:- select concat("For the city ",city,"the highest rating is ",max(rating)) as Format from customers group by city;
+
 
 
 
 3) Write a query that lists customers in descending order of rating. Output the rating field first,
-followed by the customer’s name and number.
+followed by the customerâ€™s name and number.
 
 ANS:- select rating,cname,cnum from customers order by rating;
 
