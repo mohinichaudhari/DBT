@@ -1,0 +1,55 @@
+1. Display the minimum Status in the Supplier table.
+
+ANS:- select min(status) from supplier;
+
+
+2. Display the maximum Weight in the Parts table.
+
+ANS:- select max(weight) from parts;
+
+
+3. Display the average Weight of the Parts.
+
+ANS:- select avg(weight) from parts;
+
+
+4. Display the total Quantity sold for part ‘P1’.
+
+ANS:- select `p#`, qty from supplier_parts_project where `p#`='p1';
+
+5. Display the total Quantity sold for each part.
+
+ANS:- select  `p#`,qty from supplier_parts_project group by `p#`;
+
+6. Display the average Quantity sold for each part.
+
+ANS:- select  `p#`,avg(qty) from supplier_parts_project group by `p#`;
+
+
+7. Display the maximum Quantity sold for each part, provided the maximum Quantity is greater than 800.
+
+ANS:- select max(qty) as "maxqty" from supplier_parts_project
+where qty > 800 group by `p#`;
+
+
+8. Display the Status and the count of Suppliers with that Status.
+
+ANS:-
+
+
+9. Display the count of Projects going on in different cities.
+
+ANS:- select count(distinct jname),city from project group by city;
+
+
+10. What is the difference between COUNT(Status) and COUNT(*) ?
+
+ANS:- count(status) does nout count NULL value rows but count(*) counts NULL value rows.
+
+11. Display the Status and the Count of Suppliers with that Status in the following format as shown below:-
+Status Count
+Ten 1
+Twenty 2
+Thirty 3
+
+ANS:-
