@@ -1,0 +1,43 @@
+Mohini Chaudhari
+200240320058
+
+Assignment-10
+
+---------------------------------------------------------------------------------------------------------------
+
+1) Write a query that lists each order number followed by the name of the customer who made the order.
+
+ANS:- select onum,cname from orders,customers
+where customers.cnum=orders.cnum;
+
+
+2) Write a query that gives the names of both the salesperson and the customer for each order along
+with the order number.
+
+ANS:- select sname,cname,onum from salespeople,customers,orders
+
+      where salespeople.snum=customers.snum and 
+salespeople.snum=orders.snum;
+
+
+3) Write a query that produces all customers serviced by salespeople with a commission above 12%.
+Output the customer’s name, the salesperson’s name, and the salesperson’s rate of commission.
+
+ANS:- select cname,sname,comm from customers,salespeople
+      where customers.snum=salespeople.snum
+      
+having comm > 0.12;
+
+
+4) Write a query that calculates the amount of the salesperson’s commission on each order by a customer
+with a rating above 100.
+
+ANS:-  select onum,salespeople.comm*orders.amt as Commission, rating 
+	
+       from orders, salespeople,customers
+
+
+       where rating > 100 and 
+customers.Snum = salespeople.Snum and 
+customers.Cnum = orders.Cnum ;
+
