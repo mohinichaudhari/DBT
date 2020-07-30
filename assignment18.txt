@@ -1,10 +1,13 @@
 1) Create a table called Cityorders. This will contain the same onum, amt and snum fields as the Orders table,
-and the same cnum and city fields as the Customers table, so that each customer’s order will be entered into
+and the same cnum and city fields as the Customers table, so that each customerâ€™s order will be entered into
 this table along with his or her city. Onum will be the primary key of Cityorders. All of the fields in 
 Cityorders will be constrained to match the Customers and Orders tables. Assume the parent keys in these 
 tables already have the proper constraints. 
 
-ANS:-
+ANS:- create table CityOrders 
+	select onum,amt,snum,cnum,city from orders NATURAL JOIN customers;
+
+	ALTER TABLE cityorders add constraint on_FK FOREIGN KEY(onum) REFERENCES ORDERS(onum);
 
 
  
@@ -13,11 +16,19 @@ the onum of the previous order for that current customer. Implement this with a 
 Orders table itself. The foreign key should refer as well to the cnum of the customer, providing a definite 
 enforced link between the current order and the one referenced.
 
-ANS:-  alter table customers add constraint pk_cust primary key(cnum);	
-
-       alter table orders add constraint foreign key(cnum) references customers(cnum);	
-
-       alter table orders add constraint pk_onum primary key(onum);
+ANS:-  alter table customers add constraint pk_cust primary key(cnum);
 	
-       alter table orders add column prev int;alter table orders 
+
+
+       alter table orders add constraint foreign key(cnum) references customers(cnum);
+
+
+	
+
+       alter table orders add constraint pk_onum primary key(onum);
+
+
+	
+       alter table orders add column prev int;
+alter table orders 
        add constraint foreign key(prev) references orders(onum);
